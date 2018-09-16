@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery.epcounter.js - A jQuery plugin for make endless promotion counter</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.min.css">
+</head>
+<body>
+<div class="wrapper">
+    <h1>A jQuery plugin for make endless promotion counter</h1>
+    <div class="library-name">jquery-epcounter</div>
+
+    <div class="navigation">
+        <ul>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#howToInstall">How to install</a></li>
+            <li><a href="#howToUse">How to use</a></li>
+            <li><a href="https://github.com/GeekHare/jquery-epcounter">GitHub</a></li>
+        </ul>
+    </div>
+
+    <!--<div class="introduction">-->
+        <!--<p>-->
+            <!--Introduction text-->
+        <!--</p>-->
+    <!--</div>-->
+
+    <div class="demo">
+        <a name="demo"></a>
+        <h2>Demo</h2>
+        <div id="hot-sale">
+            <div class="an-offer">
+                <span class="part-1">Hot Sale</span>
+                <span class="part-2">-50%</span>
+            </div>
+            <div id="epcounter">
+                <div>An expire: <div class="expire-box"><span id="expireMount"></span> <span id="expireDays"></span></div> a days left:  <div class="expire-box"><span id="daysLeft"></span></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="howToInstall">
+        <a name="howToInstall"></a>
+        <h2>How to install</h2>
+
+        <h3>Install via NPM</h3>
+        <div class="code-block">
+            <code class="bash highlight">
+    npm install jquery-epcounter
+            </code>
+        </div>
+
+        <h3>Install via Bower</h3>
+        <div class="code-block">
+            <code class="bash highlight">
+    bower install jquery-epcounter
+            </code>
+        </div>
+
+        <h3>Or download .zip archive</h3>
+        <div style="text-align: center;">
+            <a class="download-btn" href="https://github.com/GeekHare/jquery-epcounter/archive/master.zip">Download</a>
+        </div>
+    </div>
+    <div class="howToUse">
+        <a name="howToUse"></a>
+        <h2>How to use</h2>
+
+        <h3>HTML</h3>
+        <div class="code-block">
+            <code class="highlight">
+    &#x3C;div id=&#x22;epcounter&#x22;&#x3E;
+        &#x3C;div&#x3E;An expire: &#x3C;span id=&#x22;expireMount&#x22;&#x3E;&#x3C;/span&#x3E; &#x3C;span id=&#x22;expireDays&#x22;&#x3E;&#x3C;/span&#x3E;&#x3C;/div&#x3E;
+        &#x3C;div&#x3E;A days left: &#x3C;span id=&#x22;daysLeft&#x22;&#x3E;&#x3C;/span&#x3E;&#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+            </code>
+        </div>
+
+        <h3>Base initializing</h3>
+        <div class="code-block">
+            <code class="highlight">
+    $("#epcounter").epcounter({
+        "idExpireMonth": "expireMount",
+        "idExpireDays": "expireDays",
+        "idDaysLeft": "daysLeft"
+    });
+            </code>
+        </div>
+
+        <h3>Set a start date and amount promotion days</h3>
+        <div class="code-block">
+            <code class="highlight">
+    $("#epcounter").epcounter({
+        "amountPromotionDays": 15,
+
+        "startDay": 1,       // Day of month 1 - 31
+        "startMonth": 8,     // Month 1 - 12,
+        "startYear": 2018,   // Year,
+
+        "idExpireMonth": "expireMount",
+        "idExpireDays": "expireDays",
+        "idDaysLeft": "daysLeft"
+    });
+            </code>
+        </div>
+
+        <h3>Full config with localization</h3>
+        <div class="code-block">
+            <code class="highlight">
+    $("#epcounter").epcounter({
+        "amountPromotionDays": 15,
+
+        "startDay": 1,      // Day of month 1 - 31
+        "startMonth": 8     // Month 1 - 12,
+        "startYear": 2018   // Year,
+
+        "idExpireMonth": "expireMount",
+        "idExpireDays": "expireDays",
+        "idDaysLeft": "daysLeft",
+
+        "monthsList": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ]
+    });
+            </code>
+        </div>
+
+        <h3>Debug (print to console)</h3>
+        <div class="code-block">
+            <code class="highlight">
+    $("#epcounter").epcounter({
+        "printLog": true // Default: false
+    });
+            </code>
+        </div>
+        <p style="text-align: center;">Result</p>
+        <div class="code-block">
+            <code class="simple-code">
+    ---------------[ jquery.epcounter.js ]---------------
+    Start date: Wed Aug 01 2018 00:00:00 GMT+0300 (Moscow Standard Time)
+    Current date: Fri Sep 14 2018 02:59:19 GMT+0300 (Moscow Standard Time)
+    Expire date: Sat Sep 29 2018 02:59:19 GMT+0300 (Moscow Standard Time)
+    Passed days: 45
+    Days left: 15
+    -----------------------------------------------------
+            </code>
+        </div>
+    </div>
+
+    <div class="about-author">
+        <h3>Created by GeekHare</h3>
+        <div class="links">
+            <a target="_blank" href="https://geekhare.me">geekhare.me</a> |
+            <a href="mailto:inbox@geekhare.me">inbox@geekhare.me</a> |
+            <a target="_blank" href="https://github.com/GeekHare">GitHub</a>
+        </div>
+    </div>
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="../dist/jquery.epcounter.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#epcounter").epcounter({
+            "idExpireMonth": "expireMount",
+            "idExpireDays": "expireDays",
+            "idDaysLeft": "daysLeft",
+            "debug": true
+        });
+
+        $('div code.highlight').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+</body>
+</html>

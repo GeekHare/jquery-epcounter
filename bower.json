@@ -1,0 +1,26 @@
+{
+  "name": "jquery-epcounter",
+  "description": "A jQuery plugin for make endless promotion counter",
+  "authors": [
+    "GeekHare <inbox@geekhare.me> (https://geekhare.me)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jquery-plugin",
+    "jquery",
+    "plugin",
+    "counter",
+    "promo",
+    "promotion",
+    "endless",
+    "javascript"
+  ],
+  "homepage": "https://github.com/GeekHare/jquery-epcounter#readme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
