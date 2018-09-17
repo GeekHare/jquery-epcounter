@@ -82,11 +82,11 @@
 
     };
 
-    // Plugin
+    // Register plugin
     $.fn.epcounter = function(options){
 
         new Epcounter(this.first(), options);
-        // return this.pElement;
+        return this.first();
     };
 
 })(jQuery);
